@@ -1,0 +1,36 @@
+body {  
+  background-color: #000;    /* Fondo negro */
+  margin: 0;                /* Elimina los márgenes predeterminados del cuerpo de la página */
+  overflow: hidden;         /* Evita las barras de desplazamiento */
+  background-repeat: no-repeat;
+  position: relative;       /* ¡MUY IMPORTANTE! Permite posicionar elementos hijos de forma absoluta */
+  width: 100vw;             /* Asegura que el body ocupe todo el ancho de la ventana */
+  height: 100vh;            /* Asegura que el body ocupe toda la altura de la ventana */
+}  
+
+canvas {
+  display: block;
+  width: 100vw;   /* El canvas ocupa todo el ancho de la ventana */
+  height: 100vh;  /* El canvas ocupa toda la altura de la ventana */
+  position: absolute; /* Posiciona el canvas de forma absoluta */
+  top: 0;
+  left: 0;
+  z-index: 1;     /* El canvas estará en la capa inferior, pero visible */
+}
+
+/* Estilos para el texto "Te extraño mucho att: lerm" */
+.message {
+  position: absolute;       /* Posiciona el texto sobre el canvas */
+  top: 50%;                 /* Mueve el punto de inicio del texto a la mitad de la altura del padre */
+  left: 50%;                /* Mueve el punto de inicio del texto a la mitad del ancho del padre */
+  transform: translate(-50%, -50%); /* Ajuste fino: Centra el texto basándose en su propio tamaño */
+  color: #fff;              /* Color del texto: blanco */
+  font-family: 'Arial', sans-serif; /* Tipo de fuente, puedes cambiarlo si tienes otra fuente */
+  font-size: 1em;           /* TAMAÑO DE FUENTE AJUSTADO A 1em (más pequeño) */
+  font-weight: bold;        /* Negrita */
+  text-align: center;       /* Alineación del texto dentro de su propio contenedor */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Sombra para que resalte y se vea mejor */
+  z-index: 10;              /* Asegura que el texto esté en una capa muy superior al canvas */
+  pointer-events: none;     /* Permite que los eventos del ratón (clics) pasen a través del texto al canvas */
+  white-space: nowrap;      /* Evita que el texto se rompa en varias líneas */
+}
